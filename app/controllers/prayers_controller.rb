@@ -5,6 +5,12 @@ class PrayersController < ApplicationController
     @prayer = Prayer.all
 	end
 
+	def show
+		@prayer = Prayer.find(params[:id])
+		@comments = @prayer.comments
+  	@comment = Comment.new
+	end
+
 	def new
 		@prayer = Prayer.new
 	end

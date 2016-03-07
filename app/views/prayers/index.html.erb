@@ -5,7 +5,7 @@
 		</tr>
 		<%@prayer.each do |p|%>
 			<tr>
-				<td><%=p.title%></td>
+				<td><%=link_to p.title,prayer_path(p)%></td>
 				<td><%=p.user.try(:name)||p.user.try(:email)%></td>
 			</tr>
 		<%end%>
