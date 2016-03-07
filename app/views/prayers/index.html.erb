@@ -1,1 +1,13 @@
-<%=@prayer.first.title%>
+	<table class="table">
+		<tr>
+			<td>標題</td>
+			<td>發文者</td>
+		</tr>
+		<%@prayer.each do |p|%>
+			<tr>
+				<td><%=p.title%></td>
+				<td><%=p.try(:email)%></td>
+			</tr>
+		<%end%>
+
+	</table>
