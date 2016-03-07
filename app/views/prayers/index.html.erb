@@ -6,8 +6,10 @@
 		<%@prayer.each do |p|%>
 			<tr>
 				<td><%=p.title%></td>
-				<td><%=p.try(:email)%></td>
+				<td><%=p.user.try(:name)||p.user.try(:email)%></td>
 			</tr>
 		<%end%>
 
 	</table>
+
+	<%=link_to "我要代禱",new_prayer_path,:class=>"btn btn-default"%>
