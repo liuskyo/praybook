@@ -1,0 +1,12 @@
+<%= form_for @comment, :url=> prayer_comment_path(@prayer, @comment) do |f|%>
+<div class="form-group">
+
+<%= f.label :content%>
+<%= f.text_area :content, :class =>"form-control" %>
+</div>
+
+<div class="form-group">
+<%= f.submit :class =>"btn btn-primary" %>
+</div>
+
+<%end %>
