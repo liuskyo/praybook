@@ -1,0 +1,2 @@
+class PrayerCommentsController < ApplicationController
+end
