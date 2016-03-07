@@ -7,7 +7,14 @@
 			<tr>
 				<td><%=link_to p.title,prayer_path(p)%></td>
 				<td><%=p.user.try(:name)||p.user.try(:email)%></td>
+				<td>
+					<% if current_user && current_user == p.user %>
+						<%= link_to "編輯文章",edit_prayer_path(p), :class=> "btn btn-default" %>
+						<%=link_to "刪除文章", prayer_path(p), :method=>:delete, :class=> "btn btn-danger" %>
+					<%end%>
+				</td>
 			</tr>
+
 		<%end%>
 
 	</table>
