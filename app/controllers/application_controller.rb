@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.for(:account_update) << :name
     end
 
+    def set_prayer
+    	@prayer = Prayer.find( params[:prayer_id] )
+  	end
+
 end

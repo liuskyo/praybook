@@ -4,9 +4,16 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+   resources :users
    resources :prayers do
       resources :comments,:controller => "prayer_comments"
+      resources :likes
 
+      member do
+        post :subscribe
+        post :unsubscribe
+      end
+      
   end
 
   root 'prayers#index'

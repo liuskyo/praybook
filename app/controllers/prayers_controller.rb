@@ -46,7 +46,20 @@ class PrayersController < ApplicationController
 
 
 
+  # POST /topics/:id/subscribe
+  def subscribe
+    @prayer = Prayer.find( params[:id] )
+    @prayer.subscriptions.create!( :user => current_user )
 
+    redirect_to :back
+  end
+
+  def unsubscribe
+    @prayer = Prayer.find( params[:id] )
+    current_user.subscriptions.where( :prayer_id => @prayer.id ).destroy_all
+
+    redirect_to :back
+  end
 
 
 

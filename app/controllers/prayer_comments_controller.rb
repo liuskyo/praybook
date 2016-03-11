@@ -38,9 +38,7 @@ class PrayerCommentsController < ApplicationController
 
 
 	private
-	def set_prayer
-    @prayer = Prayer.find( params[:prayer_id] )
-  end
+
 
 	def comment_params
 		params.require(:comment).permit(:content)
