@@ -1,11 +1,13 @@
 	<table class="table">
 		<tr>
+		  <td>類別</td>
 			<td>標題</td>
 			<td>發文者</td>
 			<td>發文時間</td>
 		</tr>
 		<%@prayer.each do |p|%>
 			<tr>
+				<td><%=p.category.name%></td>
 				<td><%=link_to p.title,prayer_path(p)%></td>
 				<td><%=p.user.try(:name)||p.user.try(:email)%></td>
 				<td><%=p.created_at.to_s(:short)%></td>
