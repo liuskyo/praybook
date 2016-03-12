@@ -35,8 +35,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'kaminari'
 gem 'devise'
-
-
+gem 'capistrano-rails', :group => :development
+gem 'capistrano-passenger', :group => :development
+gem 'mysql2'
 
 
 
